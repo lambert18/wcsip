@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chat</title>
+        <link rel="stylesheet" href="stylesheet/stylesheet.css">
+    </head>
+    <body style="background:url('gan.png');background-size:cover;">
+		<center>
+			<div id="d1" style="height:600px;width:480px;background-color:orange;font-size:48px;overflow-y: auto;"></div>
+			<input id="c" type="text" style="width:356px;">
+			<input type="submit" style="width:120px;" onclick="a2()">
+		<center>
+	</body>
+	<script>
+		function a2() {
+			var a = new XMLHttpRequest();
+			a.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					var div = document.createElement('div');
+					var parent = document.getElementById("d1");
+					div.innerHTML = this.responseText;
+					if (parent) {
+						parent.appendChild(div);
+						parent.scrollTop = parent.scrollHeight;
+					}
+				  //document.getElementById("d1").innerHTML = this.responseText;
+				}
+			};
+			a.open("GET", "wi.php?c="+c.value, true);
+			a.send();
+			document.getElementById("c").value="";
+		}
+	</script>

@@ -1,0 +1,43 @@
+
+
+body {
+    width: auto;
+    height: 733px;
+    display: block;
+    position: relative;
+}
+
+.bg::after {
+    content: "";
+    text-align: center;
+    background-image: url("../images/tree.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.6;
+    position: absolute;
+    z-index: -1;
+}
+
+.bg-chat {
+    margin: 0 auto;
+    height: 600px;
+    width: 480px;
+    background-color: orange;
+}
+
+
+.input-chat {
+    text-align: center;
+}
+
+
+
+#c {
+    width: 370px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
